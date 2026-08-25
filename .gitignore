@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments (highly recommended to keep isolated)
+.venv/
+venv/
+ENV/
+env/
+
+# Flask/Python configuration and secrets
+.env
+instance/
+
+# Testing and coverage reports
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local databases (e.g., SQLite)
+*.db
+*.sqlite3
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
