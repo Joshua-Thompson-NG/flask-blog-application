@@ -1,11 +1,36 @@
-{% extends "base.html"  %}
-	
+{% extends "base.html" %}
 {% block content %}
-	{% for i in posts %}
-        <h1>{{ i.title }}</h1>
-        <p>{{ i.author }}</p>
-        <p>{{ i.content }}</p>
+<div class="space-y-8">
+    {% for i in posts %}
+    <article class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-200">
+        <div class="flex flex-col gap-3">
+
+            <!-- Metadata: Name and Muted Date -->
+            <div class="flex items-center gap-2 text-sm">
+                <a href="" class="font-semibold text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    {{ i.author }}
+                </a>
+                <span class="text-gray-400 dark:text-gray-500">•</span>
+                <time datetime="{{ i.date_posted }}" class="text-gray-400 dark:text-gray-500">
+                    {{ i.date_posted }}
+                </time>
+            </div>
+
+            <!-- Horizontal Divider Line -->
+            <hr class="border-gray-200 dark:border-gray-700 my-1">
+
+            <!-- Blog Post Title -->
+            <h2 class="text-xl sm:text-2xl font-bold tracking-tight text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                <a href="">{{ i.title }}</a>
+            </h2>
+
+            <!-- Content Preview -->
+            <p class="text-gray-600 dark:text-gray-300 line-clamp-4 leading-relaxed">
+                {{ i.content }}
+            </p>
+
+        </div>
+    </article>
     {% endfor %}
+</div>
 {% endblock %}
-
-
