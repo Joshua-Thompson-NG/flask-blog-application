@@ -20,15 +20,15 @@
 
         {# right side navbar - hidden on mobile #}
         <div class="hidden md:flex items-center space-x-6">
-            <a href="/home" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">Home</a>
-            <a href="/about" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">About</a>
-            <a href="/contact" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">Contact</a>
+            <a href="{{ url_for('home') }}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">Home</a>
+            <a href="{{ url_for('about') }}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">About</a>
+            <a href="{{ url_for('contact') }}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">Contact</a>
         </div>
 
         {# cta buttons - hidden on mobile #}
         <div class="hidden md:flex items-center space-x-4 border-l pl-8 border-gray-400 dark:border-gray-700">
-            <a href="/login" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">Log in</a>
-            <a href="/register" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">Register</a>
+            <a href="{{ url_for('login') }}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">Log in</a>
+            <a href="{{ url_for('register') }}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">Register</a>
         </div>
 
         {# hamburger button - only shows on mobile #}
@@ -49,12 +49,12 @@
 
     {# mobile menu panel - hidden by default #}
     <div id="mobile-menu" class="hidden md:hidden mt-3 px-2 pt-2 pb-3 space-y-1 border-t border-gray-200 dark:border-gray-700">
-        <a href="/home" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Home</a>
-        <a href="/about" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">About</a>
+        <a href="{{ url_for('home') }}" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Home</a>
+        <a href="{{ url_for('about') }}" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">About</a>
         <a href="/contact" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Contact</a>
         <div class="pt-2 mt-2 border-t border-gray-200 dark:border-gray-700 space-y-1">
-            <a href="/login" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Log in</a>
-            <a href="/register" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Register</a>
+            <a href="{{ url_for('login') }}" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Log in</a>
+            <a href="{{ url_for('register') }}" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Register</a>
         </div>
     </div>
     </header>
