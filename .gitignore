@@ -10,7 +10,7 @@ ENV/
 env/
 
 # Flask/Python configuration and secrets
-.env
+flaskblog/.env
 instance/
 
 # Testing and coverage reports

@@ -1,5 +1,6 @@
-from app import db
 from datetime import datetime
+
+from flaskblog import db
 
 # --- Database Setup ---
 # --- One-to-many-relationship ---
