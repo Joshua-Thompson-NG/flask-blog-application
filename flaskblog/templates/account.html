@@ -4,7 +4,7 @@
 
         {# --- profile header --- #}
         <div class="flex items-center gap-4 pb-6 mb-6 border-b border-gray-200 dark:border-gray-700">
-            <img src="{{ url_for('static', filename='profile_pics/' + current_user.image_file) }}"
+            <img src="{{image_file}}"
                  alt="Profile picture"
                  class="w-20 h-20 rounded-full object-cover border-2 border-gray-200 dark:border-gray-600">
             <div>
@@ -13,47 +13,49 @@
             </div>
         </div>
 
-        {# --- account update form --- #}
-{#        <form method="POST" enctype="multipart/form-data" class="space-y-5">#}
-{#            {{ form.hidden_tag() }}#}
-{##}
-{#            <div>#}
-{#                {{ form.username.label(class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1") }}#}
-{#                {% if form.username.errors %}#}
-{#                    {{ form.username(class="w-full rounded-md border border-red-400 bg-white dark:bg-gray-700 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-400") }}#}
-{#                    <div class="mt-1 text-sm text-red-600 dark:text-red-400">#}
-{#                        {% for error in form.username.errors %}<span>{{ error }}</span>{% endfor %}#}
-{#                    </div>#}
-{#                {% else %}#}
-{#                    {{ form.username(class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-400") }}#}
-{#                {% endif %}#}
-{#            </div>#}
-{##}
-{#            <div>#}
-{#                {{ form.email.label(class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1") }}#}
-{#                {% if form.email.errors %}#}
-{#                    {{ form.email(class="w-full rounded-md border border-red-400 bg-white dark:bg-gray-700 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-400") }}#}
-{#                    <div class="mt-1 text-sm text-red-600 dark:text-red-400">#}
-{#                        {% for error in form.email.errors %}<span>{{ error }}</span>{% endfor %}#}
-{#                    </div>#}
-{#                {% else %}#}
-{#                    {{ form.email(class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-400") }}#}
-{#                {% endif %}#}
-{#            </div>#}
-{##}
-{#            <div>#}
-{#                {{ form.picture.label(class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1") }}#}
-{#                {{ form.picture(class="block w-full text-sm text-gray-600 dark:text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-gray-100 file:text-gray-700 hover:file:bg-gray-200 dark:file:bg-gray-700 dark:file:text-gray-200 dark:hover:file:bg-gray-600") }}#}
-{#                {% if form.picture.errors %}#}
-{#                    <div class="mt-1 text-sm text-red-600 dark:text-red-400">#}
-{#                        {% for error in form.picture.errors %}<span>{{ error }}</span>{% endfor %}#}
-{#                    </div>#}
-{#                {% endif %}#}
-{#            </div>#}
-{##}
-{#            <div class="pt-2">#}
-{#                {{ form.submit(class="inline-flex items-center px-4 py-2 rounded-md bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm font-semibold hover:bg-gray-700 dark:hover:bg-gray-200 transition-colors cursor-pointer") }}#}
-{#            </div>#}
-{#        </form>#}
+{#         --- account update form --- #}
+        <form method="POST" enctype="multipart/form-data" class="space-y-5">
+            {{ form.hidden_tag() }}
+
+            <h2 class="dark:text-white text-2xl font-extrabold text-gray-900 tracking-tight">Account Update</h2>
+
+            <div>
+                {{ form.username.label(class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1") }}
+                {% if form.username.errors %}
+                    {{ form.username(class="w-full rounded-md border border-red-400 bg-white dark:bg-gray-700 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-400") }}
+                    <div class="mt-1 text-sm text-red-600 dark:text-red-400">
+                        {% for error in form.username.errors %}<span>{{ error }}</span>{% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.username(class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-400") }}
+                {% endif %}
+            </div>
+
+            <div>
+                {{ form.email.label(class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1") }}
+                {% if form.email.errors %}
+                    {{ form.email(class="w-full rounded-md border border-red-400 bg-white dark:bg-gray-700 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-red-400") }}
+                    <div class="mt-1 text-sm text-red-600 dark:text-red-400">
+                        {% for error in form.email.errors %}<span>{{ error }}</span>{% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.email(class="w-full rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 px-3 py-2 text-sm text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-400") }}
+                {% endif %}
+            </div>
+
+            <div>
+                {{ form.picture.label(class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1") }}
+                {{ form.picture(class="block w-full text-sm text-gray-600 dark:text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-gray-100 file:text-gray-700 hover:file:bg-gray-200 dark:file:bg-gray-700 dark:file:text-gray-200 dark:hover:file:bg-gray-600") }}
+                {% if form.picture.errors %}
+                    <div class="mt-1 text-sm text-red-600 dark:text-red-400">
+                        {% for error in form.picture.errors %}<span>{{ error }}</span>{% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="pt-2">
+                {{ form.submit(class="inline-flex items-center px-4 py-2 rounded-md bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm font-semibold hover:bg-gray-700 dark:hover:bg-gray-200 transition-colors cursor-pointer") }}
+            </div>
+        </form>
     </div>
 {% endblock %}
