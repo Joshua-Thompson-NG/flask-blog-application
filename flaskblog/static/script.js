@@ -26,3 +26,24 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+
+        const deleteBtn = document.getElementById('deleteBtn');
+        const deleteModal = document.getElementById('deleteModal');
+        const deleteModalBackdrop = document.getElementById('deleteModalBackdrop');
+        const cancelDeleteBtn = document.getElementById('cancelDeleteBtn');
+
+        function openModal() {
+            deleteModal.classList.remove('hidden');
+        }
+        function closeModal() {
+            deleteModal.classList.add('hidden');
+        }
+
+        deleteBtn.addEventListener('click', openModal);
+        cancelDeleteBtn.addEventListener('click', closeModal);
+        deleteModalBackdrop.addEventListener('click', closeModal);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
