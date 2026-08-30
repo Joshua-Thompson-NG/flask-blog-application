@@ -12,7 +12,7 @@
 
             {% if post.author == current_user %}
                 <div class="flex items-center gap-2 flex-shrink-0">
-                    <a href="{{ url_for('update_post', post_id=post.id) }}"
+                    <a href="{{ url_for('posts.update_post', post_id=post.id) }}"
                        class="px-3 py-1.5 rounded-md border border-gray-300 dark:border-gray-600 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
                         Update
                     </a>
@@ -46,7 +46,7 @@
                         class="px-4 py-2 rounded-md border border-gray-300 dark:border-gray-600 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
                     Cancel
                 </button>
-                <form method="POST" action="{{ url_for('delete_post', post_id=post.id) }}">
+                <form method="POST" action="{{ url_for('posts.delete_post', post_id=post.id) }}">
                     <button type="submit"
                             class="px-4 py-2 rounded-md bg-red-600 text-white text-sm font-medium hover:bg-red-700 transition-colors">
                         Delete

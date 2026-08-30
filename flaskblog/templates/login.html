@@ -22,8 +22,8 @@
                     {{ form.remember.label(class="text-sm text-gray-600 dark:text-gray-300") }}
                 </div>
 
-                <a href="{{ url_for('reset_request') }}" class="text-sm text-blue-600 hover:underline">
-                    Forgot Password?
+                <a href="{{ url_for('users.reset_request') }}" class="text-sm text-blue-600 hover:underline">
+                        Forgot Password?
                 </a>
             </div>
 
@@ -34,7 +34,7 @@
 
         <div class="border-t border-gray-200 dark:border-gray-700 mt-4 pt-4">
             <small class="text-gray-500 dark:text-gray-400">
-                Need an account? <a href="{{ url_for('register') }}" class="text-blue-600 hover:underline">Register</a>
+                Need an account? <a href="{{ url_for('users.register') }}" class="text-blue-600 hover:underline">Register</a>
             </small>
         </div>
     </div>

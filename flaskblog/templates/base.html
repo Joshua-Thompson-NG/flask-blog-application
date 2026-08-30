@@ -20,20 +20,20 @@
 
         {# right side navbar - hidden on mobile #}
         <div class="hidden md:flex items-center space-x-6">
-            <a href="{{ url_for('home') }}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">Home</a>
-            <a href="{{ url_for('about') }}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">About</a>
-            <a href="{{ url_for('contact') }}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">Contact</a>
+            <a href="{{ url_for('main.home') }}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">Home</a>
+            <a href="{{ url_for('main.about') }}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">About</a>
+            <a href="{{ url_for('main.contact') }}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">Contact</a>
         </div>
 
         {# cta buttons - hidden on mobile #}
         <div class="hidden md:flex items-center space-x-4 border-l pl-8 border-gray-400 dark:border-gray-700">
             {% if current_user.is_authenticated %}
-                <a href="{{ url_for('account') }}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">Account</a>
-                <a href="{{ url_for('new_post') }}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">New Post</a>
-                <a href="{{ url_for('logout') }}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">Log out</a>
+                <a href="{{ url_for('users.account') }}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">Account</a>
+                <a href="{{ url_for('posts.new_post') }}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">New Post</a>
+                <a href="{{ url_for('users.logout') }}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">Log out</a>
             {% else %}
-            <a href="{{ url_for('login') }}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">Log in</a>
-            <a href="{{ url_for('register') }}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">Register</a>
+            <a href="{{ url_for('users.login') }}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">Log in</a>
+            <a href="{{ url_for('users.register') }}" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white font-medium transition-colors">Register</a>
             {% endif %}
         </div>
 
@@ -55,17 +55,17 @@
 
     {# mobile menu panel - hidden by default #}
     <div id="mobile-menu" class="hidden md:hidden mt-3 px-2 pt-2 pb-3 space-y-1 border-t border-gray-200 dark:border-gray-700">
-        <a href="{{ url_for('home') }}" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Home</a>
-        <a href="{{ url_for('about') }}" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">About</a>
+        <a href="{{ url_for('main.home') }}" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Home</a>
+        <a href="{{ url_for('main.about') }}" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">About</a>
         <a href="/contact" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Contact</a>
         <div class="pt-2 mt-2 border-t border-gray-200 dark:border-gray-700 space-y-1">
             {% if current_user.is_authenticated %}
-                <a href="{{ url_for('account') }}" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Account</a>
-                <a href="{{ url_for('new_post') }}" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">New Post</a>
-                <a href="{{ url_for('logout') }}" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Log Out</a>
+                <a href="{{ url_for('users.account') }}" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Account</a>
+                <a href="{{ url_for('posts.new_post') }}" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">New Post</a>
+                <a href="{{ url_for('users.logout') }}" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Log Out</a>
             {% else %}
-           <a href="{{ url_for('login') }}" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Log in</a>
-            <a href="{{ url_for('register') }}" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Register</a>
+           <a href="{{ url_for('users.login') }}" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Log in</a>
+            <a href="{{ url_for('users.register') }}" class="block px-3 py-2 rounded-md text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 font-medium">Register</a>
             {% endif %}
         </div>
     </div>
@@ -76,12 +76,12 @@
         <div class="flex-1 min-w-0 max-4xl gap-4">
 
             {# --- BACK BUTTON ---  #}
-            {% if request.endpoint != 'home' %}
+            {% if request.endpoint != 'main.home' %}
 
 
                 <div class="mb-4 flex justify-between items-center">
                     <button type="button"
-                            onclick="if (window.history.length > 1) { history.back(); } else { window.location.href = '{{ url_for('home') }}'; }"
+                            onclick="if (window.history.length > 1) { history.back(); } else { window.location.href = '{{ url_for('main.home') }}'; }"
                             class="inline-flex items-center gap-2 px-3 py-2 rounded-md border border-gray-300 dark:border-gray-600 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
                         <span aria-hidden="true">&larr;</span>
                         Back
