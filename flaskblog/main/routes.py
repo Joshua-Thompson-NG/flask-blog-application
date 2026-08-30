@@ -1,5 +1,8 @@
-from flask import Blueprint,render_template,request
+from flask import Blueprint,render_template,request,redirect,url_for,flash
+from flaskblog.main.forms import ContactForm
 from flaskblog.models import Post
+from flaskblog.main.utils import send_contact_email
+
 
 main = Blueprint('main',__name__)
 
@@ -15,6 +18,11 @@ def home():
 def about():
     return render_template("about.html",title="About")
 
-@main.route('/contact')
+@main.route('/contact', methods=['POST','GET'])
 def contact():
-    return "<h1> Contact Page </h1>"
+    form = ContactForm()
+    if form.validate_on_submit():
+        send_contact_email(form)
+        flash('Your message has been sent. Thank you!','success')
+        return redirect(url_for('main.contact'))
+    return render_template('contact.html',title='Contact',form=form)

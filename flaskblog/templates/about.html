@@ -1,6 +1,67 @@
 {% extends "base.html" %}
 {% block content %}
-	<h1>About Page</h1>
+<div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 sm:p-8 shadow-sm space-y-6">
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi aperiam architecto corporis delectus, eaque error est eveniet fugit incidunt, ipsum, nam necessitatibus nihil odio possimus praesentium quas veritatis vitae?</p>
+    <div>
+        <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white">About Flask Blog</h1>
+        <p class="mt-2 text-gray-600 dark:text-gray-300 leading-relaxed">
+            A simple blogging platform built with Flask, where users can register an account,
+            write posts, and share what's on their mind.
+        </p>
+    </div>
+
+    <hr class="border-gray-200 dark:border-gray-700">
+
+    <div>
+        <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">What you can do here</h2>
+        <ul class="space-y-2 text-gray-600 dark:text-gray-300">
+            <li class="flex items-start gap-2">
+                <span class="text-blue-600 dark:text-blue-400 mt-0.5">&#10003;</span>
+                <span>Create an account and log in securely</span>
+            </li>
+            <li class="flex items-start gap-2">
+                <span class="text-blue-600 dark:text-blue-400 mt-0.5">&#10003;</span>
+                <span>Write, edit, and delete your own blog posts</span>
+            </li>
+            <li class="flex items-start gap-2">
+                <span class="text-blue-600 dark:text-blue-400 mt-0.5">&#10003;</span>
+                <span>Browse posts from other users on the home page</span>
+            </li>
+            <li class="flex items-start gap-2">
+                <span class="text-blue-600 dark:text-blue-400 mt-0.5">&#10003;</span>
+                <span>Update your profile picture and account details</span>
+            </li>
+            <li class="flex items-start gap-2">
+                <span class="text-blue-600 dark:text-blue-400 mt-0.5">&#10003;</span>
+                <span>Reset your password by email if you forget it</span>
+            </li>
+        </ul>
+    </div>
+
+    <hr class="border-gray-200 dark:border-gray-700">
+
+    <div>
+        <h2 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Built with</h2>
+        <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium">Flask</span>
+            <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium">Flask-SQLAlchemy</span>
+            <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium">Flask-Login</span>
+            <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium">Flask-WTF</span>
+            <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium">Flask-Bcrypt</span>
+            <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium">Flask-Mail</span>
+            <span class="px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm font-medium">Tailwind CSS</span>
+        </div>
+    </div>
+
+    <hr class="border-gray-200 dark:border-gray-700">
+
+    <div>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            This project started as a way to learn Flask fundamentals: application factories, blueprints,
+            database models, authentication, and form handling. Have a question or feedback?
+            <a href="{{ url_for('main.contact') }}" class="text-blue-600 hover:underline">Get in touch</a>.
+        </p>
+    </div>
+
+</div>
 {% endblock %}
