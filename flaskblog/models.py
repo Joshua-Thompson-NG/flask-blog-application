@@ -1,9 +1,10 @@
 from datetime import datetime
 
 
-from flaskblog import db,login_manager,app
+from flaskblog import db,login_manager
 from flask_login import UserMixin
 from itsdangerous import URLSafeTimedSerializer as Serializer, SignatureExpired,BadSignature
+from flask import current_app as app
 
 
 # --- Login Manager Setup ---

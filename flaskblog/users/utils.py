@@ -1,8 +1,9 @@
 import os,secrets
 from PIL import Image
 from flask import url_for
-from flaskblog import app,mail
+from flaskblog import mail
 from flask_mail import Message
+from flask import current_app as app
 
 # Save Img func
 def save_img(form_picture):
